@@ -47,9 +47,11 @@ pipeline {
 		sh  'mvn package'	
                  }		
            post {
+              success{ 
                echo "now archiving"
                archiveArtifacts artifacts: '**/*.war'
                 } 
+               } 
         }
     }
 }
